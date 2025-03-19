@@ -5,7 +5,7 @@ const C09PacketHeldItemChange = Java.type("net.minecraft.network.play.client.C09
 let replaceParticles = false;
 
 register("packetSent", (packet, event) => {
-    replaceParticles = Player.getInventory()?.getItems()?.[packet.func_149614_c()]?.getName().includes("Flaming Flay");
+    replaceParticles = Player.getInventory()?.getItems()?.[packet.func_149614_c()]?.getName()?.includes("Flaming Flay");
 }).setFilteredClass(C09PacketHeldItemChange);
 
 register("spawnParticle", (particle, type, event) => {
